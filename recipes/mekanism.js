@@ -59,6 +59,7 @@ ServerEvents.recipes(event => {
     event.smelting('mekanism:ingot_lead', 'mekanism:raw_lead', 0.7, 200).id('kubejs:mekanism/smelting_lead_manual_only_1')
     event.smelting('mekanism:ingot_lead', '#forge:ores/lead', 0.7, 200).id('kubejs:mekanism/smelting_lead_manual_only_2')
 
+    // #region First tier
     event.recipes.create.mechanical_crafting('mekanism:metallurgic_infuser', [
         'IMRMI',
         'MLFLM',
@@ -90,4 +91,21 @@ ServerEvents.recipes(event => {
         L: 'mekanism:basic_control_circuit',
         G: '#forge:glass'
     }).id('kubejs:mekanism/energized_smelter')
+
+    event.recipes.create.mechanical_crafting('mekanism:enrichment_chamber', [
+        'RMLMR',
+        'MIOIM',
+        'LGCGL',
+        'MIOIM',
+        'RMLMR',
+    ], {
+        R: 'minecraft:redstone',
+        M: 'create:iron_sheet',
+        I: 'minecraft:iron_ingot',
+        C: 'mekanism:steel_casing',
+        O: 'mekanism:ingot_osmium',
+        L: 'mekanism:basic_control_circuit',
+        G: '#forge:glass'
+    }).id('kubejs:mekanism/energized_smelter')
+    // #endregion
 })
